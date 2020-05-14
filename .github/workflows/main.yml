@@ -1,0 +1,25 @@
+name: CI
+
+on: [push]
+
+jobs:
+  setup-otp:
+    name: A job to setup otp
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos-latest
+          - windows-latest
+        otp-version:
+          - "OTP-23.0"
+      fail-fast: false
+    runs-on: ${{ matrix.os }}
+    steps:
+      # To use this repository's private action, you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ matrix.otp-version }}
+      - name: Setup OTP
+        uses: niku/setup-otp@master
