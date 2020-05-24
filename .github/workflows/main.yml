@@ -23,4 +23,4 @@ jobs:
       - name: Setup OTP
         uses: niku/setup-otp@master
         with:
-          myToken: ${{ secrets.GITHUB_TOKEN }}
+          secret-token: ${{ secrets.GITHUB_TOKEN }}
