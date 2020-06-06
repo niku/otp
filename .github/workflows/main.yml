@@ -21,6 +21,7 @@ jobs:
         with:
           ref: ${{ matrix.otp-version }}
       - name: Setup OTP
-        uses: niku/setup-otp@master
+
+        uses: niku/otp-kuroko@master
         with:
           secret-token: ${{ secrets.GITHUB_TOKEN }}
