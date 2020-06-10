@@ -2,7 +2,7 @@ name: Make repository sync
 
 on:
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "*/5 * * * *"
 jobs:
   repo-sync:
     runs-on: ubuntu-latest
@@ -11,7 +11,7 @@ jobs:
       - name: repo-sync
         uses: repo-sync/github-sync@v2
         with:
-          source_repo: https://github.com/erlang/otp
-          source_branch: "*"
-          destination_branch: "*"
+          source_repo: erlang/otp
+          source_branch: master
+          destination_branch: master
           github_token: ${{ secrets.GITHUB_TOKEN }}
