@@ -1,6 +1,9 @@
+name: SyncRepo
+
 on:
   schedule:
     - cron: "*/5 * * * *"
+      
 jobs:
   repo-sync:
     runs-on: ubuntu-latest
