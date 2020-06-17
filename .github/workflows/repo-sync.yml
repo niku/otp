@@ -9,8 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.PAT_TOKEN }}
       - name: repo-sync
         uses: repo-sync/github-sync@v2
         with:
@@ -18,10 +16,3 @@ jobs:
           source_branch: "*"
           destination_branch: "*"
           github_token: ${{ secrets.GITHUB_TOKEN }}
-      - name: generate main.yml
-        run: node .github/workflows/generate.js > .github/workflows/main.yml
-      - name: commit generated main.yml
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: Apply automatic changes
-          file_pattern: .github/workflows/main.yml
