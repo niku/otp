@@ -2,7 +2,7 @@ name: Provide precompiled OTP release assets
 
 on:
   schedule:
-    - cron: "* */1 * * *"
+    - cron: "29 6 * * *"
 
 jobs:
   provide-precompiled-otp-release-assets:
