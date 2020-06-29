@@ -1,26 +1,26 @@
-name: Provide precompiled OTP release assets
+# name: Provide precompiled OTP release assets
 
-on:
-  schedule:
-    - cron: "29 6 * * *"
+# on:
+#   schedule:
+#     - cron: "29 6 * * *"
 
-jobs:
-  provide-precompiled-otp-release-assets:
-    name: A job to setup otp
-    strategy:
-      matrix:
-        os:
-          - macos-latest
-          # - ubuntu-latest
-          # - windows-latest
-    runs-on: ${{ matrix.os }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          ref: master
-          fetch-depth: 0
-      - name: Provide precompiled OTP release assets
-        uses: niku/otp-kuroko@master
-        with:
-          secret-token: ${{ secrets.GITHUB_TOKEN }}
+# jobs:
+#   provide-precompiled-otp-release-assets:
+#     name: A job to setup otp
+#     strategy:
+#       matrix:
+#         os:
+#           - macos-latest
+#           # - ubuntu-latest
+#           # - windows-latest
+#     runs-on: ${{ matrix.os }}
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v2
+#         with:
+#           ref: master
+#           fetch-depth: 0
+#       - name: Provide precompiled OTP release assets
+#         uses: niku/otp-kuroko@master
+#         with:
+#           secret-token: ${{ secrets.GITHUB_TOKEN }}
