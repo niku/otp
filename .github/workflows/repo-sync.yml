@@ -10,9 +10,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: repo-sync
-        uses: repo-sync/github-sync@v2
+        uses: wei/git-sync@v2
         with:
-          source_repo: https://github.com/erlang/otp.git
-          source_branch: "*"
-          destination_branch: "*"
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          source_repo: erlang/otp
+          source_branch: "refs/tags/*"
+          destination_repo: niku/otp
+          destination_branch: "refs/tags/*"
