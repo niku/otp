@@ -6,6 +6,9 @@ on:
       target-pattern:
         description: "A pattern to provide"
         required: true
+      force-update:
+        description: "Force update if true"
+        required: false
 jobs:
   provide-precompiled-otp-release-assets:
     name: A job to setup otp
